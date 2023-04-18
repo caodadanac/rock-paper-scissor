@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rps.css">
+    <title>Rock-Paper-Scissor</title>
+</head>
+<body>
+    <h3>Welcome to Rock Paper Scissor Game</h3>
+    <p>Please choose:</p>
+    <div>
+        <button onclick="let plmove1='rock';let cptmove1='';cptmove1=cptmove();plmove(plmove1,cptmove1);">Rock</button>
+        <button onclick="let plmove2='paper';let cptmove2='';cptmove2=cptmove();plmove(plmove2,cptmove2);">Paper</button>
+        <button onclick="let plmove3='scissor';let cptmove3='';cptmove3=cptmove();plmove(plmove3,cptmove3);">Scissor</button>
+    </div>
+    <script>
+        function cptmove(){
+            let rdnumber=Math.random();
+            let cptmove='';
+            if(0<rdnumber&&rdnumber<1/3){
+                cptmove='rock';
+            }
+            if(1/3<=rdnumber&&rdnumber<2/3){
+                cptmove='paper';
+            }
+            else{
+                cptmove='scissor';
+            }
+            
+            return cptmove;
+        }
+        function plmove(plmove,cptmove){
+            let result='';
+            if(plmove==='rock'){
+                if(cptmove==='rock'){
+                    result='tie';
+                    alert(`You choose ${plmove}, Computer choose ${cptmove}, you ${result}`);
+                }
+                if(cptmove==='paper'){
+                    result='loose';
+                    alert(`You choose ${plmove}, Computer choose ${cptmove}, you ${result}`);
+                }
+                if(cptmove==='scissor'){
+                    result='win';
+                    alert(`You choose ${plmove}, Computer choose ${cptmove}, you ${result}`);
+                }
+            }
+            if(plmove==='paper'){
+                if(cptmove==='rock'){
+                    result='win';
+                    alert(`You choose ${plmove}, Computer choose ${cptmove}, you ${result}`);
+                }
+                if(cptmove==='paper'){
+                    result='tie';
+                    alert(`You choose ${plmove}, Computer choose ${cptmove}, you ${result}`);
+                }
+                if(cptmove==='scissor'){
+                    result='loose';
+                    alert(`You choose ${plmove}, Computer choose ${cptmove}, you ${result}`);
+                }
+            }
+            if(plmove==='scissor'){
+                if(cptmove==='rock'){
+                    result='loose';
+                    alert(`You choose ${plmove}, Computer choose ${cptmove}, you ${result}`);
+                }
+                if(cptmove==='paper'){
+                    result='win';
+                    alert(`You choose ${plmove}, Computer choose ${cptmove}, you ${result}`);
+                }
+                if(cptmove==='scissor'){
+                    result='tie';
+                    alert(`You choose ${plmove}, Computer choose ${cptmove}, you ${result}`);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
